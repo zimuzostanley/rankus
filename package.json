@@ -1,0 +1,9 @@
+{
+  "name": "RankUs",
+  "version": "0.0.0",
+  "description": "Twitter ranking",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.0.0"
+  }
+}
