@@ -6,6 +6,7 @@ var fs = require('fs');
 var express = require('express');
 
 var app = express();
+app.set('port', (process.env.PORT || 4000));
 app.use(body_parser.urlencoded({extended: false}));
 
 var make_req = function(options, data, cb) {
@@ -165,9 +166,9 @@ app.post('/rank', function(request,response){
 
 });
 
-var server = app.listen(4000, function() {
+var server = app.listen(app.get('port'), function() {
 	var host = server.address().address;
 	var port = server.address().port;
 
-	console.log('Twitter ranking app listen at http://%s:%s', host, port);
+	console.log('Twitter ranking app listen at http://%s:%s', host, app.get('port'));
 });
